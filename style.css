@@ -1,0 +1,389 @@
+:root {
+    --main: #2c3e50;
+    --accent: #34495e;
+    --bg: #f4f1ee;
+}
+
+/* ELEMENT SELECTOR */
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background: linear-gradient(-45deg, #f4f1ee, #e8f6f3, #fdfefe);
+    background-size: 400% 400%;
+    animation: gradientMove 10s infinite;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    animation: fadeIn 1.2s ease-in;
+}
+
+header h1 {
+    background: linear-gradient(90deg, #ffffff, #d6eaf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* NAVIGATION */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 8px;
+    padding: 6px 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: var(--accent);
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.menu a.active {
+    border-bottom: 2px solid white;
+}
+
+/* GROUP SELECTOR */
+section, footer {
+    margin: 25px;
+    padding: 20px;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    animation: slideUp 0.8s ease;
+}
+
+/* IMAGE FLOAT */
+.photo {
+    float: left;
+    width: 140px;
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 10px 15px 10px 0;
+}
+
+.card img {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* CLEAR FLOAT */
+.bio::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* SKILLS */
+.skills li {
+    background: radial-gradient(circle, #d6eaf8, #aed6f1);
+    margin: 6px;
+    padding: 8px;
+}
+
+/* PROJECT CARDS */
+.card {
+    padding: 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+    background: white;
+    margin-bottom: 12px;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.card {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* FORM BUTTON */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background: var(--main);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* PAGINATION */
+.pagination a {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    border: 1px solid #aaa;
+    text-decoration: none;
+    color: black;
+}
+
+.pagination a.active {
+    background: var(--main);
+    color: white;
+}
+
+.pagination a:hover {
+    background: #ddd;
+}
+
+/* PSEUDO CLASSES */
+.skills li:first-child { font-weight: bold; }
+.skills li:last-child { font-style: italic; }
+.skills li:nth-child(3) { background: #aed6f1; }
+
+/* FOOTER */
+footer {
+    background: var(--main);
+    color: white;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu li { display: block; }
+    .photo { float: none; display: block; margin: auto; }
+}
+
+@media (max-width: 480px) {
+    .card { width: 100%; }
+}
+
+/* FLEXBOX FOR SKILLS & PROJECTS */
+   
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card {
+    display: block; 
+}
+
+#work {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+}
+
+/* OVERFLOW PROPERTY (portfolio use) */
+.bio {
+    max-height: 120px;
+    overflow: auto;   
+}
+
+/* CHILD SELECTOR */
+#abilities > h2 {
+    text-decoration: underline;
+}
+
+/* ADJACENT SIBLING SELECTOR */
+h3 + p {
+    color: #333;
+}
+
+/* GENERAL SIBLING SELECTOR */
+h2 ~ p {
+    line-height: 1.5;
+}
+
+/* ATTRIBUTE SELECTORS (FORM) */
+input[type="text"],
+input[type="email"] {
+    border: 1px solid #555;
+}
+
+/* FORM FOCUS EFFECT */
+input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid var(--main);
+}
+
+/* PSEUDO ELEMENTS */
+h2::before {
+    content: "• ";
+    color: var(--main);
+}
+
+.bio::first-letter {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bio::first-line {
+    font-style: italic;
+}
+
+footer::after {
+    content: "Not to be copied";
+    font-size: 12px;
+}
+
+/* FEEDBACK PAGE STYLING */
+
+.feedback-section {
+    display: flex;              
+    justify-content: center;
+}
+
+.feedback-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* CHILD SELECTOR */
+.feedback-form > label {
+    font-weight: bold;
+}
+
+/* ATTRIBUTE SELECTORS */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #777;
+}
+
+/* FOCUS PSEUDO CLASS */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: 2px solid var(--main);
+}
+
+/* ADJACENT SIBLING */
+label + input {
+    background: #f9f9f9;
+}
+
+/* GENERAL SIBLING */
+input ~ textarea {
+    background: #fcfcfc;
+}
+
+/* PSEUDO ELEMENT */
+.feedback-section h2::before {
+    content: "✉ ";
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .feedback-form {
+        width: 95%;
+    }
+}
+
+/* GRID MAIN LAYOUT */
+main {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "about"
+        "skills"
+        "projects"
+        "contact"
+        "footer";
+    gap: 12px;
+}
+
+header { grid-area: header; }
+#intro { grid-area: about; }
+#abilities { grid-area: skills; }
+#work { grid-area: projects; }
+#reach { grid-area: contact; }
+footer { grid-area: footer; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.progress {
+    background: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 6px 0;
+}
+
+.bar {
+    height: 18px;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    width: 0;
+    animation: fillBar 2s forwards;
+}
+
+.html { width: 90%; }
+.python { width: 80%; }
+
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+@media (max-width: 992px) {
+    #work { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    #work { grid-template-columns: 1fr; }
+    .menu li { display: block; }
+}
