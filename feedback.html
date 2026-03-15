@@ -1,54 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
+    <meta name="description" content="Feedback page for Mehul Kumar's portfolio.">
+    <meta name="theme-color" content="#0b1220">
+    <title>Portfolio Feedback | Mehul Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<a class="skip-link" href="#feedback-main">Skip to feedback form</a>
 
-<header>
-    <h1>Feedback Form</h1>
-    <p class="tagline">Share your valuable feedback</p>
-</header>
+<header class="hero hero-compact panel">
+    <div class="top-bar">
+        <p class="brand">MY Portfolio</p>
 
-<section class="feedback-section">
-
-    <form class="feedback-form">
-
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-        <label for="rating">Rate My Portfolio</label>
-        <select id="rating" name="rating">
-            <option>Excellent</option>
-            <option>Very Good</option>
-            <option>Good</option>
-            <option>Average</option>
-        </select>
-
-        <label for="message">Your Feedback</label>
-        <textarea id="message" rows="4" placeholder="Write your feedback"></textarea>
-
-        <button type="submit" class="btn">Submit Feedback</button>
-
-    </form>
-
-    <!-- Pagination -->
-    <div class="pagination">
-        <a href="index.html">1</a>
-        <a href="#" class="active">2</a>
+        <nav aria-label="Feedback page navigation">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Feedback</a></li>
+            </ul>
+        </nav>
     </div>
 
-</section>
+    <div class="hero-grid">
+        <div class="hero-copy">
+            <p class="eyebrow">Feedback</p>
+            <h1>Share Your Feedback</h1>
+            <p class="lead">
+                Your thoughts help me improve the portfolio experience, project storytelling, and overall professionalism.
+            </p>
+        </div>
+    </div>
+</header>
 
-<footer>
-    <p>Portfolio Feedback © 2026</p>
+<main id="feedback-main">
+    <section class="feedback-section panel">
+        <div>
+            <div class="section-head">
+                <h2>Feedback Form</h2>
+                <p>Quick feedback on design, content, and usability is highly appreciated.</p>
+            </div>
+
+            <form class="feedback-form" action="#" method="post">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="rating">Rate My Portfolio</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select rating</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="very-good">Very Good</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                </select>
+
+                <label for="message">Your Feedback</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your feedback" required></textarea>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+            <div class="feedback-actions">
+                <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+                <div class="pagination" aria-label="Page navigation">
+                    <a href="index.html">1</a>
+                    <a href="#" class="active">2</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="panel">
+    <p>Portfolio Feedback | &copy; <span id="year">2026</span> | Thank you for helping me improve</p>
 </footer>
 
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
