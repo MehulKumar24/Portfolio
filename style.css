@@ -175,6 +175,17 @@ footer.panel:hover {
     flex-wrap: wrap;
 }
 
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-100);
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
 .menu a {
     display: inline-block;
     position: relative;
@@ -786,6 +797,38 @@ footer p {
     .hero-photo-wrap {
         max-width: 350px;
         margin: 0 auto;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mobile: hide the inline horizontal menu and present a collapsible panel */
+    .menu {
+        display: none;
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        top: 72px;
+        padding: 12px;
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 8px;
+        background: linear-gradient(175deg, rgba(18, 28, 45, 0.98), rgba(16, 24, 39, 0.96));
+        border: 1px solid var(--line-soft);
+        z-index: 9998;
+    }
+
+    body.nav-open .menu {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
     }
 }
 

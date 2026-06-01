@@ -18,7 +18,9 @@
     <div class="top-bar">
         <p class="brand">MY Portfolio</p>
 
-        <nav aria-label="Primary navigation">
+        <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">☰</button>
+
+        <nav id="primary-nav" aria-label="Primary navigation">
             <ul class="menu">
                 <li><a href="#top" class="active">Home</a></li>
                 <li><a href="#intro">About</a></li>
@@ -264,6 +266,43 @@
                 </ul>
                 <span class="text-link">Status: Academic and Research prototype</span>
             </article>
+
+            <article class="project-card">
+                <h3>AURELIA (Private)</h3>
+                <p>
+                    Advanced conversational AI assistant modernized to a production-ready Python application (AURELIA v4.0). Features robust NLP, memory management, and cross-platform action capabilities.
+                </p>
+                <ul class="project-meta">
+                    <li><strong>Focus:</strong> Conversational AI, intent & entity recognition, memory-driven dialogue</li>
+                    <li><strong>Stack:</strong> Python 3.10+ • pytest • mypy • Black • Ruff • pyttsx3 (optional TTS)</li>
+                </ul>
+                <p style="margin:6px 0 0;color:var(--text-300);font-size:0.92rem">Highlights: production packaging (pyproject.toml), CI (GitHub Actions), 31/31 tests passed, graceful headless desktop automation.</p>
+                <span class="text-link">Status: Private — repo available on request</span>
+            </article>
+
+            <article class="project-card">
+                <h3>Course Selection Portal</h3>
+                <p>
+                    Interactive course browser with search, filters, save/select and a compact UI. Implements localStorage for saved selections and client-side filtering for fast browsing.
+                </p>
+                <ul class="project-meta">
+                    <li><strong>Focus:</strong> Usability and client-side UX</li>
+                    <li><strong>Stack:</strong> HTML, CSS, JavaScript</li>
+                </ul>
+                <a class="text-link" href="https://github.com/MehulKumar24/Course-Selection-Portal" target="_blank" rel="noopener">View repository</a>
+            </article>
+
+            <article class="project-card">
+                <h3>EcoSphere</h3>
+                <p>
+                    EcoSphere is a sustainability-focused PWA delivering educational content, case studies, a global organization directory, and offline-first support via a service worker.
+                </p>
+                <ul class="project-meta">
+                    <li><strong>Focus:</strong> Sustainability education and PWA UX</li>
+                    <li><strong>Stack:</strong> HTML, CSS, Vanilla JS, Service Worker, PWA</li>
+                </ul>
+                <a class="text-link" href="https://github.com/MehulKumar24/EcoSphere" target="_blank" rel="noopener">View repository</a>
+            </article>
         </div>
     </section>
 
@@ -330,5 +369,6 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script src="script.js"></script>
 </body>
 </html>

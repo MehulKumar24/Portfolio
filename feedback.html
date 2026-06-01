@@ -18,7 +18,9 @@
     <div class="top-bar">
         <p class="brand">MY Portfolio</p>
 
-        <nav aria-label="Feedback page navigation">
+        <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">☰</button>
+
+        <nav id="primary-nav" aria-label="Feedback page navigation">
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#" class="active">Feedback</a></li>
@@ -84,5 +86,6 @@
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script src="script.js"></script>
 </body>
 </html>
